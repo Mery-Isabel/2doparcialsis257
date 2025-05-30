@@ -38,6 +38,9 @@ export class Series {
 
     @Column('int')
     temporadas: number;
+
+    @Column('varchar', { length: 10, name: 'tipo_clasificacion' })
+    tipoClasificacion: string;
     
     @Column('date', { name: 'fecha_estreno' })
     fechaEstreno: Date;

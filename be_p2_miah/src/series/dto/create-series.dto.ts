@@ -48,6 +48,12 @@ export class CreateSeriesDto {
     @IsString({ message: "El campo fechaEstreno debe ser de tipo cadena" })
     @IsDateString({}, { message: "El campo fechaEstreno debe ser una fecha válida" })
     readonly fechaEstreno: Date;
+
+    @IsNotEmpty()
+    @IsString()
+    @MaxLength(10)
+    @ApiProperty({ example: "+13", description: "Clasificación por edad o tipo" })
+    tipoClasificacion: string;
 }
 
 

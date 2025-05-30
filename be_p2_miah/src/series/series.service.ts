@@ -34,8 +34,10 @@ export class SeriesService {
     serie.director = createSeriesDto.director.trim();
     serie.temporadas = createSeriesDto.temporadas;
     serie.fechaEstreno = createSeriesDto.fechaEstreno;
+    serie.tipoClasificacion = createSeriesDto.tipoClasificacion.trim();
     return this.seriesRepository.save(serie);
   }
+  
 
   async findAll(): Promise<Series[]> { //hace que muestre todas las series
     return this.seriesRepository.find({
